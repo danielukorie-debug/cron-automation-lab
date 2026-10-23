@@ -1,0 +1,17 @@
+# Generated logs
+logs/
+*.log
+
+# Credentials and secrets
+.env
+.env.*
+*.pem
+*.key
+*.secret
+
+# Temporary and editor files
+*.tmp
+*.swp
+*.swo
+.DS_Store
+Thumbs.db

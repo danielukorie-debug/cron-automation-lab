@@ -1,0 +1,5 @@
+# Example: run the Linux system report every day at 8:00 AM.
+# Replace YOUR_USERNAME with your Linux username before installing.
+# This file is an example; it does not activate the schedule.
+
+0 8 * * * /usr/bin/bash /home/YOUR_USERNAME/cron-automation-lab/scripts/system_report.sh >> /home/YOUR_USERNAME/cron-automation-lab/logs/system-report.log 2>&1
