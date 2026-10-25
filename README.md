@@ -73,3 +73,30 @@ troubleshooting scheduled automation.
 - Check service status automatically
 - Add error handling and exit-code reporting
 - Run script checks through Jenkins
+
+
+## Automation Workflow Diagram
+
+This diagram illustrates the intended scheduled workflow. The committed crontab file is an example and is not automatically installed on the system.
+
+```mermaid
+flowchart TD
+    Cron[Installed cron schedule - when configured]
+    Script[scripts/system_report.sh]
+    Collect[Collect Linux system information]
+    Output[Report written to standard output]
+    Log[Log file - when output redirection is configured]
+    Manual[Manual script execution]
+
+    Cron --> Script
+    Manual --> Script
+    Script --> Collect
+    Collect --> Output
+    Output -. scheduled output redirection .-> Log
+```
+
+## Screenshot Evidence
+
+![Cron lab system report](docs/images/cron-system-report.png)
+
+This screenshot shows an actual run of the system-report script. The diagram describes the intended scheduled workflow; it does not claim that the example cron entry is currently active.
